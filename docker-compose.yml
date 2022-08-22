@@ -1,15 +1,15 @@
 version: "3.8"
 services:
         web:
-          image: "${IMAGE}"
+          image: "priyankchheta/test-docker:php"
           ports:
             - "8001:80"
           depends_on:
             - mysql
         mysql:
-          image: devopstrainer/java-mvn-privaterepos:mysql
+          image: priyankchheta/test-docker:sql
           volumes:
-          - db_data:/var/lib/mysql
+          - db_data:/var/lib/sql
           environment:
                 MYSQL_ROOT_PASSWORD: password
                 MYSQL_DATABASE: mydatabase
